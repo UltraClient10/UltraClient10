@@ -183,9 +183,25 @@ I'm fascinated by the engineering behind Formula 1 and endurance racing, where s
 
 </div>
 
+
 ### Tic-Tac-Toe
 
-*GitHub Issues-powered community game — planned.*
+<div align="center">
+
+![Tic Tac Toe Board](https://raw.githubusercontent.com/UltraClient10/UltraClient10/main/arcade/tictactoe.svg)
+
+**Play Tic-Tac-Toe directly through GitHub Issues!**
+
+| Column A | Column B | Column C |
+|:---:|:---:|:---:|
+| [A1](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20A1) | [A2](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20A2) | [A3](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20A3) |
+| [B1](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20B1) | [B2](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20B2) | [B3](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20B3) |
+| [C1](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20C1) | [C2](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20C2) | [C3](https://github.com/UltraClient10/UltraClient10/issues/new?title=move%20C3) |
+
+Choose a position, submit the Issue and wait for
+GitHub Actions to update the board.
+
+</div>
 
 ### Community Chess
 
