@@ -1,0 +1,220 @@
+
+name: Developer Arcade - Tic Tac Toe
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: tic-tac-toe-game
+  cancel-in-progress: false
+
+jobs:
+  play:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.issue.title, 'move ')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Process game
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const branch = context.payload.repository.default_branch;
+            const issue = context.payload.issue;
+
+            const statePath = "arcade/tictactoe.json";
+            const svgPath = "arcade/tictactoe.svg";
+
+            const positions = {
+              A1: 0, A2: 1, A3: 2,
+              B1: 3, B2: 4, B3: 5,
+              C1: 6, C2: 7, C3: 8
+            };
+
+            async function readFile(path) {
+              try {
+                const response = await github.rest.repos.getContent({
+                  owner, repo, path, ref: branch
+                });
+                return {
+                  sha: response.data.sha,
+                  text: Buffer.from(
+                    response.data.content, "base64"
+                  ).toString("utf8")
+                };
+              } catch (error) {
+                if (error.status === 404) {
+                  return { sha: undefined, text: null };
+                }
+                throw error;
+              }
+            }
+
+            async function saveFile(path, content, message) {
+              const previous = await readFile(path);
+              await github.rest.repos.createOrUpdateFileContents({
+                owner, repo, path,
+                branch,
+                message,
+                sha: previous.sha,
+                content: Buffer.from(content).toString("base64")
+              });
+            }
+
+            function winner(board) {
+              const lines = [
+                [0,1,2], [3,4,5], [6,7,8],
+                [0,3,6], [1,4,7], [2,5,8],
+                [0,4,8], [2,4,6]
+              ];
+              for (const [a,b,c] of lines) {
+                if (board[a] &&
+                    board[a] === board[b] &&
+                    board[b] === board[c]) {
+                  return board[a];
+                }
+              }
+              return null;
+            }
+
+            const previous = await readFile(statePath);
+            let state = previous.text
+              ? JSON.parse(previous.text)
+              : { board: Array(9).fill(null), turn: "X" };
+
+            let message = "";
+
+            if (issue) {
+              const match = /^move ([ABC][123])$/i.exec(
+                issue.title.trim()
+              );
+
+              if (!match) {
+                message = "Invalid move. Use: move A1";
+              } else {
+                const position = match[1].toUpperCase();
+                const index = positions[position];
+                const won = winner(state.board);
+                const draw = state.board.every(Boolean);
+
+                if (won || draw) {
+                  message = "Game finished. No more moves.";
+                } else if (state.board[index]) {
+                  message = "Position already occupied.";
+                } else {
+                  const player = state.turn;
+                  state.board[index] = player;
+                  state.turn = player === "X" ? "O" : "X";
+
+                  const newWinner = winner(state.board);
+                  message = newWinner
+                    ? `Player ${newWinner} wins!`
+                    : state.board.every(Boolean)
+                      ? "Draw! Game finished."
+                      : `Player ${player} played ${position}.`;
+                }
+              }
+            }
+
+            const won = winner(state.board);
+            const draw = !won && state.board.every(Boolean);
+            const status = won
+              ? `WINNER: ${won}`
+              : draw
+                ? "DRAW"
+                : `NEXT PLAYER: ${state.turn}`;
+
+            const cells = state.board.map((value, i) => {
+              const x = 30 + (i % 3) * 120;
+              const y = 110 + Math.floor(i / 3) * 120;
+              const label = [
+                "A1","A2","A3",
+                "B1","B2","B3",
+                "C1","C2","C3"
+              ][i];
+
+              const fill = value === "X"
+                ? "#10B981"
+                : "#F87171";
+
+              return `
+                <rect x="${x}" y="${y}"
+                  width="108" height="108"
+                  rx="12" fill="#17242B"
+                  stroke="#31434A"/>
+                <text x="${x + 12}" y="${y + 20}"
+                  fill="#81949B" font-size="12"
+                  font-family="monospace">${label}</text>
+                <text x="${x + 54}" y="${y + 75}"
+                  fill="${fill}" font-size="54"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  font-family="monospace">${value || ""}</text>
+              `;
+            }).join("");
+
+            const svg = `
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   width="420" height="535"
+                   viewBox="0 0 420 535">
+                <rect width="420" height="535"
+                  rx="20" fill="#0D1117"/>
+                <rect x="1" y="1" width="418"
+                  height="533" rx="19"
+                  fill="none" stroke="#23433B"/>
+                <text x="210" y="48"
+                  fill="#10B981" font-size="24"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  font-family="monospace">
+                  TIC TAC TOE
+                </text>
+                <text x="210" y="78"
+                  fill="#B9C9C5" font-size="13"
+                  text-anchor="middle"
+                  font-family="monospace">
+                  ULTRACLIENT10 / DEVELOPER ARCADE
+                </text>
+                ${cells}
+                <text x="210" y="498"
+                  fill="#10B981" font-size="19"
+                  font-weight="bold"
+                  text-anchor="middle"
+                  font-family="monospace">
+                  ${status}
+                </text>
+              </svg>
+            `;
+
+            await saveFile(
+              statePath,
+              JSON.stringify(state, null, 2) + "\n",
+              "arcade: update tic tac toe state"
+            );
+
+            await saveFile(
+              svgPath,
+              svg,
+              "arcade: update tic tac toe board"
+            );
+
+            if (issue) {
+              await github.rest.issues.createComment({
+                owner, repo,
+                issue_number: issue.number,
+                body: `${message}\n\nCurrent status: ${status}`
+              });
+
+              await github.rest.issues.update({
+                owner, repo,
+                issue_number: issue.number,
+                state: "closed"
+              });
+            }
