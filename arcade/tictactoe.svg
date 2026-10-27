@@ -1,0 +1,148 @@
+
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="420" height="535"
+       viewBox="0 0 420 535">
+    <rect width="420" height="535"
+      rx="20" fill="#0D1117"/>
+    <rect x="1" y="1" width="418"
+      height="533" rx="19"
+      fill="none" stroke="#23433B"/>
+    <text x="210" y="48"
+      fill="#10B981" font-size="24"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace">
+      TIC TAC TOE
+    </text>
+    <text x="210" y="78"
+      fill="#B9C9C5" font-size="13"
+      text-anchor="middle"
+      font-family="monospace">
+      ULTRACLIENT10 / DEVELOPER ARCADE
+    </text>
+    
+    <rect x="30" y="110"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="42" y="130"
+      fill="#81949B" font-size="12"
+      font-family="monospace">A1</text>
+    <text x="84" y="185"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="150" y="110"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="162" y="130"
+      fill="#81949B" font-size="12"
+      font-family="monospace">A2</text>
+    <text x="204" y="185"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="270" y="110"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="282" y="130"
+      fill="#81949B" font-size="12"
+      font-family="monospace">A3</text>
+    <text x="324" y="185"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="30" y="230"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="42" y="250"
+      fill="#81949B" font-size="12"
+      font-family="monospace">B1</text>
+    <text x="84" y="305"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="150" y="230"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="162" y="250"
+      fill="#81949B" font-size="12"
+      font-family="monospace">B2</text>
+    <text x="204" y="305"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="270" y="230"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="282" y="250"
+      fill="#81949B" font-size="12"
+      font-family="monospace">B3</text>
+    <text x="324" y="305"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="30" y="350"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="42" y="370"
+      fill="#81949B" font-size="12"
+      font-family="monospace">C1</text>
+    <text x="84" y="425"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="150" y="350"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="162" y="370"
+      fill="#81949B" font-size="12"
+      font-family="monospace">C2</text>
+    <text x="204" y="425"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <rect x="270" y="350"
+      width="108" height="108"
+      rx="12" fill="#17242B"
+      stroke="#31434A"/>
+    <text x="282" y="370"
+      fill="#81949B" font-size="12"
+      font-family="monospace">C3</text>
+    <text x="324" y="425"
+      fill="#F87171" font-size="54"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace"></text>
+  
+    <text x="210" y="498"
+      fill="#10B981" font-size="19"
+      font-weight="bold"
+      text-anchor="middle"
+      font-family="monospace">
+      NEXT PLAYER: X
+    </text>
+  </svg>
