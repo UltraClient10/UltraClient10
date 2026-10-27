@@ -1,6 +1,6 @@
 {
   "board": [
-    null,
+    "X",
     null,
     null,
     null,
@@ -10,5 +10,5 @@
     null,
     null
   ],
-  "turn": "X"
+  "turn": "O"
 }
