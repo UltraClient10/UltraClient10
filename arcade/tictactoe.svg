@@ -29,10 +29,10 @@
       fill="#81949B" font-size="12"
       font-family="monospace">A1</text>
     <text x="84" y="185"
-      fill="#F87171" font-size="54"
+      fill="#10B981" font-size="54"
       font-weight="bold"
       text-anchor="middle"
-      font-family="monospace"></text>
+      font-family="monospace">X</text>
   
     <rect x="150" y="110"
       width="108" height="108"
@@ -143,6 +143,6 @@
       font-weight="bold"
       text-anchor="middle"
       font-family="monospace">
-      NEXT PLAYER: X
+      NEXT PLAYER: O
     </text>
   </svg>
