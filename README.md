@@ -174,9 +174,14 @@ I'm fascinated by the engineering behind Formula 1 and endurance racing, where s
 
 <div align="center">
 
+
 ### Contribution Snake
 
-*Automated contribution animation — coming in the next implementation stage.*
+<div align="center">
+
+![UltraClient10 Contribution Snake](https://raw.githubusercontent.com/UltraClient10/UltraClient10/output/github-snake.svg)
+
+</div>
 
 ### Tic-Tac-Toe
 
