@@ -93,7 +93,11 @@ I'm also interested in the technology behind **Formula 1 and the World Endurance
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=UltraClient10&theme=github-dark-blue&hide_border=true&ring=10B981&fire=10B981)
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=UltraClient10&theme=github-compact)
+
+### Contribution Activity
+
+[![View my GitHub Contributions](https://img.shields.io/badge/View_My_Contributions-10B981?style=for-the-badge&logo=github&logoColor=white)](https://github.com/UltraClient10#user-activity-overview)
+
 </div>
 
 ---
