@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260" role="img" aria-label="Illustrative telemetry visualization">
+<rect width="1000" height="260" rx="14" fill="#10191C" stroke="#31574B"/><text x="28" y="37" font-family="monospace" font-size="20" fill="#6EE7B7">MOTORSPORT / TECHNOLOGY LAB</text><text x="730" y="37" font-family="monospace" font-size="13" fill="#A3BFB4">CONCEPTUAL DATA</text>
+<g stroke="#28423D" stroke-width="1"><path d="M30 75H970M30 115H970M30 155H970M30 195H970M30 235H970"/></g>
+<path d="M30 188L75 172 115 185 160 102 205 128 250 81 290 114 335 68 380 142 425 117 470 178 515 90 560 109 605 61 650 128 695 85 740 124 785 72 830 103 875 66 925 99 970 73" fill="none" stroke="#34D399" stroke-width="4" stroke-linejoin="round"/>
+<path d="M30 218L75 208 115 194 160 174 205 184 250 162 290 159 335 181 380 165 425 211 470 203 515 150 560 171 605 137 650 165 695 148 740 174 785 137 830 152 875 122 925 145 970 126" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linejoin="round"/>
+<rect x="30" y="48" width="9" height="9" fill="#DC2626"/><text x="48" y="57" font-family="monospace" font-size="12" fill="#B6D0C5">F1 / WEC / ENGINEERING CONCEPT</text>
+</svg>
